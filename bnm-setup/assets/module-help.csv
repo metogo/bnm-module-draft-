@@ -1,0 +1,26 @@
+module,skill,display-name,menu-code,description,action,args,phase,preceded-by,followed-by,required,output-location,outputs
+BNM,_meta,,,,,,,,,false,https://docs.bmad-method.org/llms.txt,
+BNM,bnm-novel-conductor,Novel Conductor,NC,Route natural language fiction requests into professional BNM workflows and specialist agents.,,,anytime,,,false,{bnm_output_folder},route plan and artifact recommendations
+BNM,bnm-author-director,Author Director,AD,Protect authorial intent creative boundaries and approval decisions.,,,anytime,,,false,{bnm_output_folder},author intent notes
+BNM,bnm-genre-strategist,Genre Strategist,GS,Define genre promise reader expectations platform fit and comparable works.,,,anytime,,,false,{bnm_output_folder},genre positioning
+BNM,bnm-premise-doctor,Premise Doctor,PD,Stress test premise viability story engine conflict pressure and long form potential.,,,anytime,,,false,{bnm_output_folder},premise diagnosis
+BNM,bnm-story-architect,Story Architect,SA,Design plot architecture causality escalation turns midpoint crisis and climax.,,,anytime,,,false,{bnm_output_folder},plot architecture
+BNM,bnm-character-architect,Character Architect,CA,Build characters arcs relationships pressure wounds lies and voice foundations.,,,anytime,,,false,{bnm_output_folder},character notes
+BNM,bnm-worldbuilding-editor,Worldbuilding Editor,WE,Design world rules costs institutions history systems and setting pressure.,,,anytime,,,false,{bnm_output_folder},worldbuilding notes
+BNM,bnm-continuity-editor,Continuity Editor,CE,Maintain canon timeline reveal order foreshadowing objects and contradiction reports.,,,anytime,,,false,{bnm_output_folder},continuity ledger updates
+BNM,bnm-chapter-planner,Chapter Planner,CP,Turn plot direction into chapter briefs and scene cards.,,,anytime,,,false,{bnm_output_folder}/chapters,chapter brief and scene cards
+BNM,bnm-scene-writer,Scene Writer,SW,Draft controlled fiction scenes and chapters from approved scene cards and project constraints.,,,anytime,,,false,{bnm_output_folder}/chapters,draft scene or chapter
+BNM,bnm-style-guardian,Style Guardian,SG,Protect narrative voice prose rhythm image system and anti AI language discipline.,,,anytime,,,false,{bnm_output_folder}/reviews,style pass
+BNM,bnm-developmental-editor,Developmental Editor,DE,Diagnose structural fiction problems and recommend cuts merges rewrites or reordering.,,,anytime,,,false,{bnm_output_folder}/reviews,developmental edit report
+BNM,bnm-dialogue-editor,Dialogue Editor,DG,Repair character voice subtext power movement and exposition heavy dialogue.,,,anytime,,,false,{bnm_output_folder}/reviews,dialogue pass
+BNM,bnm-pacing-doctor,Pacing Doctor,PC,Diagnose tension curves information release chapter propulsion and retention risk.,,,anytime,,,false,{bnm_output_folder}/reviews,pacing map
+BNM,bnm-theme-critic,Theme Critic,TC,Build thematic coherence through choices costs consequences and dramatic pressure.,,,anytime,,,false,{bnm_output_folder},theme map
+BNM,bnm-discover-novel-concept,Discover Novel Concept,DNC,Turn raw fiction ideas into a story brief reader promise and premise viability notes.,,,planning,,,false,{bnm_output_folder},story brief
+BNM,bnm-validate-premise,Validate Premise,VP,Stress test whether a premise can sustain a novel novella series or short story.,,,planning,bnm-discover-novel-concept,,false,{bnm_output_folder},premise diagnosis
+BNM,bnm-build-story-bible,Build Story Bible,BSB,Create the central control document for the novel promise conflict theme and constraints.,,,planning,bnm-validate-premise,,false,{bnm_output_folder},story bible
+BNM,bnm-build-character-bible,Build Character Bible,BCB,Create operational character files for motivation arc relationships and voice foundations.,,,planning,bnm-build-story-bible,,false,{bnm_output_folder},character bible
+BNM,bnm-build-world-bible,Build World Bible,BWB,Create setting rules costs institutions research boundaries and conflict pressure.,,,planning,bnm-build-story-bible,,false,{bnm_output_folder},world bible
+BNM,bnm-architect-plot,Architect Plot,AP,Build plot architecture turning points causality subplot function and reveal obligations.,,,planning,bnm-build-character-bible,bnm-draft-chapter,false,{bnm_output_folder},plot architecture
+BNM,bnm-draft-chapter,Draft Chapter,DC,Plan draft style check and continuity register a chapter.,,[chapter],drafting,bnm-architect-plot,bnm-continuity-audit,false,{bnm_output_folder}/chapters,chapter brief draft and ledger updates
+BNM,bnm-revise-chapter,Revise Chapter,RC,Diagnose an existing chapter at the correct layer before rewriting or polishing.,,[path],revision,bnm-draft-chapter,,false,{bnm_output_folder}/reviews,chapter diagnosis and rewrite plan
+BNM,bnm-continuity-audit,Continuity Audit,CY,Detect contradictions canon drift timeline errors reveal order problems and missing payoffs.,,[path],revision,bnm-draft-chapter,bnm-revise-chapter,false,{bnm_output_folder}/reviews,contradiction report

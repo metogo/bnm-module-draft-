@@ -1,0 +1,47 @@
+{
+  "name": "bmad-novel-method",
+  "description": "BMad Novel Method: agentic fiction-development workflows for long-form novel writing.",
+  "owner": {
+    "name": "BNM Project"
+  },
+  "license": "MIT",
+  "plugins": [
+    {
+      "name": "bmad-novel-method",
+      "description": "Professional novel-writing agents, workflows, templates, and conductor routing for BMad.",
+      "version": "0.1.0",
+      "author": {
+        "name": "BNM Project"
+      },
+      "category": "writing",
+      "source": "./",
+      "skills": [
+        "bnm-setup",
+        "bnm-novel-conductor",
+        "bnm-author-director",
+        "bnm-genre-strategist",
+        "bnm-premise-doctor",
+        "bnm-story-architect",
+        "bnm-character-architect",
+        "bnm-worldbuilding-editor",
+        "bnm-continuity-editor",
+        "bnm-chapter-planner",
+        "bnm-scene-writer",
+        "bnm-style-guardian",
+        "bnm-developmental-editor",
+        "bnm-dialogue-editor",
+        "bnm-pacing-doctor",
+        "bnm-theme-critic",
+        "bnm-discover-novel-concept",
+        "bnm-validate-premise",
+        "bnm-build-story-bible",
+        "bnm-build-character-bible",
+        "bnm-build-world-bible",
+        "bnm-architect-plot",
+        "bnm-draft-chapter",
+        "bnm-revise-chapter",
+        "bnm-continuity-audit"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+code: bnm
+name: BMad Novel Method
+description: Agentic fiction-development workflow for long-form novel writing.
+module_version: 0.1.0
+default_selected: false
+module_greeting: >
+  BMad Novel Method is installed. Start with the Novel Conductor and describe
+  your writing problem naturally; BNM will route to the right professional roles.
+
+bnm_output_folder:
+  prompt: "Where should BNM project artifacts be saved?"
+  default: "{project-root}/docs/novel"
+  result: "{project-root}/{value}"
+
+bnm_default_language:
+  prompt: "What language should BNM use for manuscript-facing output?"
+  default: "Chinese"
+
+bnm_default_mode:
+  prompt: "Default BNM operating mode?"
+  default: "professional"
+

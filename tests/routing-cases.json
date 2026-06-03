@@ -1,0 +1,151 @@
+[
+  {
+    "id": "raw_concept_to_discovery",
+    "user_request": "我想写一个城市里梦境会被征税的故事，主角是偷梦的人，悬疑一点但不是纯探案。",
+    "mode": "professional",
+    "intent_layers": ["concept", "genre", "premise", "world"],
+    "expected_commands": [
+      "bnm-novel-conductor",
+      "bnm-discover-novel-concept",
+      "bnm-validate-premise",
+      "bnm-build-world-bible"
+    ],
+    "expected_roles": [
+      "bnm-genre-strategist",
+      "bnm-premise-doctor",
+      "bnm-worldbuilding-editor",
+      "bnm-story-architect"
+    ],
+    "expected_artifacts": [
+      "story-brief.md",
+      "premise-diagnosis.md",
+      "world-bible.md"
+    ],
+    "must_not": [
+      "Ask user to choose an agent",
+      "Treat setting as sufficient story engine"
+    ]
+  },
+  {
+    "id": "flat_character_to_character_workflow",
+    "user_request": "我的女主很扁，感觉只是跟着剧情走，没有自己的魅力。",
+    "mode": "professional",
+    "intent_layers": ["character", "revision"],
+    "expected_commands": [
+      "bnm-novel-conductor",
+      "bnm-build-character-bible",
+      "bnm-revise-chapter"
+    ],
+    "expected_roles": [
+      "bnm-character-architect",
+      "bnm-developmental-editor",
+      "bnm-dialogue-editor"
+    ],
+    "expected_artifacts": [
+      "character-bible.md",
+      "relationship-map.md",
+      "character-arc-map.md"
+    ],
+    "must_not": [
+      "Only add adjectives",
+      "Only rewrite dialogue without diagnosing desire and pressure"
+    ]
+  },
+  {
+    "id": "draft_chapter_with_missing_context",
+    "user_request": "帮我直接写第三章。",
+    "mode": "professional",
+    "intent_layers": ["chapter", "scene", "continuity"],
+    "expected_commands": [
+      "bnm-novel-conductor",
+      "bnm-draft-chapter"
+    ],
+    "expected_roles": [
+      "bnm-chapter-planner",
+      "bnm-continuity-editor",
+      "bnm-scene-writer",
+      "bnm-style-guardian"
+    ],
+    "expected_artifacts": [
+      "chapter-brief.md",
+      "draft-chapter.md",
+      "continuity-ledger.md"
+    ],
+    "must_not": [
+      "Draft without chapter purpose",
+      "Invent durable canon silently"
+    ]
+  },
+  {
+    "id": "boring_middle_to_pacing_and_structure",
+    "user_request": "中段很无聊，读者可能会弃文，但我不知道是节奏慢还是情节问题。",
+    "mode": "professional",
+    "intent_layers": ["revision", "pacing", "structure"],
+    "expected_commands": [
+      "bnm-novel-conductor",
+      "bnm-revise-chapter",
+      "bnm-architect-plot"
+    ],
+    "expected_roles": [
+      "bnm-developmental-editor",
+      "bnm-pacing-doctor",
+      "bnm-story-architect"
+    ],
+    "expected_artifacts": [
+      "developmental-edit-report.md",
+      "pacing-map.md",
+      "rewrite-plan.md"
+    ],
+    "must_not": [
+      "Only make prose tighter",
+      "Add fake cliffhangers"
+    ]
+  },
+  {
+    "id": "continuity_bug_to_audit",
+    "user_request": "帮我检查一下前十章有没有前后矛盾，尤其是时间线和伏笔。",
+    "mode": "strict",
+    "intent_layers": ["continuity", "revision"],
+    "expected_commands": [
+      "bnm-novel-conductor",
+      "bnm-continuity-audit"
+    ],
+    "expected_roles": [
+      "bnm-continuity-editor",
+      "bnm-story-architect",
+      "bnm-character-architect"
+    ],
+    "expected_artifacts": [
+      "contradiction-report.md",
+      "continuity-ledger.md",
+      "foreshadowing-register.md"
+    ],
+    "must_not": [
+      "Only summarize chapters",
+      "Ignore character knowledge boundaries"
+    ]
+  },
+  {
+    "id": "less_ai_prose_to_style_guardian",
+    "user_request": "这段太像 AI 写的，帮我改得像真正小说，但不要改剧情。",
+    "mode": "fast",
+    "intent_layers": ["prose", "style"],
+    "expected_commands": [
+      "bnm-novel-conductor"
+    ],
+    "expected_roles": [
+      "bnm-style-guardian",
+      "bnm-dialogue-editor",
+      "bnm-scene-writer"
+    ],
+    "expected_artifacts": [
+      "style-pass.md",
+      "line-level-notes.md"
+    ],
+    "must_not": [
+      "Change canon",
+      "Only replace words with prettier synonyms"
+    ]
+  }
+]
+
