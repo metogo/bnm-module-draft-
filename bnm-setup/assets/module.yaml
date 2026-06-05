@@ -13,10 +13,13 @@ bnm_output_folder:
   result: "{project-root}/{value}"
 
 bnm_default_language:
-  prompt: "What language should BNM use for manuscript-facing output?"
+  prompt: "What language should BNM use for user-facing and manuscript-facing output?"
+  default: "Chinese"
+
+bnm_response_language:
+  prompt: "What language should BNM use for user-facing responses?"
   default: "Chinese"
 
 bnm_default_mode:
   prompt: "Default BNM operating mode?"
   default: "professional"
-

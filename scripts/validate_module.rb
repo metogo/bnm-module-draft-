@@ -18,6 +18,8 @@ begin
   config = YAML.load_file(module_yaml)
   errors << "module.yaml missing code: bnm" unless config["code"] == "bnm"
   errors << "module.yaml missing module_version" unless config["module_version"]
+  errors << "module.yaml must default bnm_default_language to Chinese" unless config["bnm_default_language"]&.fetch("default", nil) == "Chinese"
+  errors << "module.yaml must default bnm_response_language to Chinese" unless config["bnm_response_language"]&.fetch("default", nil) == "Chinese"
 rescue StandardError => e
   errors << "module.yaml invalid: #{e.message}"
 end
@@ -73,6 +75,11 @@ skill_dirs.each do |dir|
   shared_chinese_policy = File.join(root, dir, "resources", "shared-resources", "chinese-output-policy.md")
   errors << "#{dir} missing bundled runtime contract" unless File.file?(shared_runtime)
   errors << "#{dir} missing bundled Chinese output policy" unless File.file?(shared_chinese_policy)
+  if File.file?(shared_runtime)
+    shared_runtime_text = File.read(shared_runtime)
+    errors << "#{dir} bundled runtime contract missing bnm_response_language" unless shared_runtime_text.include?("bnm_response_language")
+    errors << "#{dir} bundled runtime contract must override core English defaults" unless shared_runtime_text.include?("must not override BNM Chinese defaults")
+  end
 end
 
 required_resource_files = [
@@ -94,6 +101,13 @@ required_resource_files.each do |relative|
   path = File.join(root, relative)
   errors << "missing module resource: #{relative}" unless File.file?(path)
 end
+
+runtime_contract = File.read(File.join(root, "shared-resources", "runtime-contract.md"))
+chinese_output_policy = File.read(File.join(root, "shared-resources", "chinese-output-policy.md"))
+errors << "runtime contract missing bnm_response_language" unless runtime_contract.include?("bnm_response_language")
+errors << "runtime contract must override core English defaults" unless runtime_contract.include?("must not override BNM Chinese defaults")
+errors << "Chinese output policy must cover user-facing responses" unless chinese_output_policy.include?("user-facing responses")
+errors << "Chinese output policy must reject core English override" unless chinese_output_policy.include?("communication_language: English")
 
 Dir.glob(File.join(root, "**", "*")).each do |path|
   next unless File.file?(path)

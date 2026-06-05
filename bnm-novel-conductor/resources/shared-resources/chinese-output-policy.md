@@ -1,6 +1,10 @@
 # Chinese Output Policy
 
-BNM defaults to Chinese for manuscript-facing output when the project language is Chinese.
+BNM defaults to Chinese for all user-facing responses and manuscript-facing output unless the user explicitly asks for another language.
+
+Do not answer in English just because BMad core config says `communication_language: English` or `document_output_language: English`.
+
+Keep code identifiers, filenames, commands, config keys, skill names, and quoted external text in English when needed for precision. Everything else should be Chinese-first.
 
 ## User-Facing Style
 
@@ -57,4 +61,3 @@ Good:
 Bad:
 
 > 这个章节已经有不错的氛围，可以再加强一点推进。
-

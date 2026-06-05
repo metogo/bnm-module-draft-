@@ -22,5 +22,4 @@ Every BNM specialist follows this contract:
 
 ## Default Language
 
-Manuscript-facing output should be Chinese unless the project explicitly asks otherwise. Internal identifiers may remain English.
-
+User-facing responses, diagnostics, workflow explanations, artifact prose, and manuscript-facing output should be Chinese unless the project explicitly asks otherwise. Internal identifiers may remain English.
